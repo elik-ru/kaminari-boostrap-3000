@@ -1,20 +1,13 @@
-# Bootstrap::Tagsinput::Rails
+# Kaminari::Bootstrap3000
 
-Original Git source - https://github.com/timschlechter/bootstrap-tagsinput
+Original Git source - https://github.com/elik-ri/kaminari-bootstrap-3000
 
-To gemify the assets of `bootstrap-tagsinput` jQuery plugin for Rails >= 3.1
-
-[![Gem Version](https://badge.fury.io/rb/bootstrap-tagsinput-rails.png)](http://badge.fury.io/rb/bootstrap-tagsinput-rails)
-
-## Compatibility
-
-Designed for Bootstrap 2.3.2 and 3
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'bootstrap-tagsinput-rails'
+    gem 'kaminari-bootstrap-3000'
 
 And then execute:
 
@@ -22,32 +15,27 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install bootstrap-tagsinput-rails
+    $ gem install kaminari-bootstrap-3000
 
 ## Usage
 
 in app/assets/application.js
 
 ```
-//= require bootstrap-tagsinput
+//= require kaminari-bootstrap-3000
 ```
 
-in app/assets/application.css
+in app/assets/application.scss
 
 ```
-*= require bootstrap-tagsinput
+@import "bootstrap";
+@import "kaminari-bootstrap-3000";
 ```
 
-in form view, you should add `data-role='tagsinput'` within input tag as the follows: for example, in `simple-form` view template,
+in view
 
 ```
-<%= f.input :tag_list, input_html:{data:{role:'tagsinput'}} %>
-```
-
-Or if using Rails 4 with Bootstrap, use the following,
-
-```
-<%= f.text_field :tag_list, 'data-role'=>'tagsinput' %>
+<%= paginate3000 @objects %>
 ```
 
 That's it
