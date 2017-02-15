@@ -26,10 +26,15 @@ module Bootstrap3000
     </div>
     </div>)
     end
+
+    def clearfix()
+      raw %Q(<div class="clearfix"></div>)
+    end
     
     def paginate3000(scope, options = {}, &block)
       paginate3000stats(scope)+	
-      paginate(scope,options.reverse_merge(:theme => '3000'),&block)
+      paginate(scope,options.reverse_merge(:theme => '3000'),&block)+
+      clearfix()
     end
 
   end
